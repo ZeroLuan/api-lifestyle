@@ -1,0 +1,96 @@
+databaseChangeLog:
+  - changeSet:
+      id: 202605030000-add-audit-columns
+      author: antigravity
+      changes:
+        - addColumn:
+            tableName: activity_participants
+            columns:
+              - column:
+                  name: deleted_at
+                  type: datetime
+
+        - addColumn:
+            tableName: activity_types
+            columns:
+              - column:
+                  name: created_at
+                  type: datetime
+                  defaultValueComputed: CURRENT_TIMESTAMP
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: datetime
+                  defaultValueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: deleted_at
+                  type: datetime
+
+        - addColumn:
+            tableName: preferences
+            columns:
+              - column:
+                  name: created_at
+                  type: datetime
+                  defaultValueComputed: CURRENT_TIMESTAMP
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: datetime
+                  defaultValueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: deleted_at
+                  type: datetime
+
+        - addColumn:
+            tableName: achievements
+            columns:
+              - column:
+                  name: created_at
+                  type: datetime
+                  defaultValueComputed: CURRENT_TIMESTAMP
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: datetime
+                  defaultValueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: deleted_at
+                  type: datetime
+
+        - addColumn:
+            tableName: user_achievements
+            columns:
+              - column:
+                  name: created_at
+                  type: datetime
+                  defaultValueComputed: CURRENT_TIMESTAMP
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: datetime
+                  defaultValueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: deleted_at
+                  type: datetime
+
+        - addColumn:
+            tableName: activity_addresses
+            columns:
+              - column:
+                  name: created_at
+                  type: datetime
+                  defaultValueComputed: CURRENT_TIMESTAMP
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: datetime
+                  defaultValueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: deleted_at
+                  type: datetime

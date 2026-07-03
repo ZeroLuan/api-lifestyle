@@ -1,0 +1,49 @@
+spring:
+  application:
+    name: backend
+  
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5433/bootcamp}
+    username: ${SPRING_DATASOURCE_USERNAME:postgres}
+    password: ${SPRING_DATASOURCE_PASSWORD:postgres}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    open-in-view: false
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+        format_sql: true
+        default_schema: public
+
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+
+springdoc:
+  swagger-ui:
+    path: /sysmap-docs.html
+    enabled: true
+  api-docs:
+    path: /api-sysmap
+    enabled: true
+  packages-to-scan: br.com.sysmap.backend.controller
+
+aws:
+  s3:
+    region: ${AWS_REGION:us-east-1}
+    bucket: ${S3_BUCKET_NAME:bootcamp-bucket}
+    endpoint: ${S3_ENDPOINT:http://localhost:4566}
+    access-key: ${AWS_ACCESS_KEY_ID:test}
+    secret-key: ${AWS_SECRET_ACCESS_KEY:test}
+
+api:
+  security:
+    token:
+      secret: ${JWT_SECRET:bootcamp2026-sysmap-secret-key-super-secure-jwt-token}
+      expiration-ms: 1800000

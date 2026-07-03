@@ -1,0 +1,43 @@
+databaseChangeLog:
+  - changeSet:
+      id: 202605030001-seed-achievements
+      author: antigravity
+      changes:
+        - insert:
+            tableName: achievements
+            columns:
+              - column:
+                  name: id
+                  value: "a1000000-0000-0000-0000-000000000001"
+              - column:
+                  name: name
+                  value: "Primeiro Check-in"
+              - column:
+                  name: criterion
+                  value: "Realizado ao confirmar presença em uma atividade pela primeira vez."
+
+        - insert:
+            tableName: achievements
+            columns:
+              - column:
+                  name: id
+                  value: "a1000000-0000-0000-0000-000000000002"
+              - column:
+                  name: name
+                  value: "Primeira Atividade Criada"
+              - column:
+                  name: criterion
+                  value: "Realizado ao criar uma atividade pela primeira vez."
+
+        - insert:
+            tableName: achievements
+            columns:
+              - column:
+                  name: id
+                  value: "a1000000-0000-0000-0000-000000000003"
+              - column:
+                  name: name
+                  value: "Primeira Atividade Concluída"
+              - column:
+                  name: criterion
+                  value: "Realizado ao concluir (encerrar) uma atividade pela primeira vez."

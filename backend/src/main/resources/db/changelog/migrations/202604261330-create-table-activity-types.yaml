@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: 202604261330-create-table-activity-types
+      author: luan
+      changes:
+        - createTable:
+            tableName: activity_types
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: description
+                  type: text
+              - column:
+                  name: image
+                  type: varchar(255)

@@ -1,0 +1,83 @@
+HELP.md
+.gradle
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+
+### Logs ###
+logs/
+*.log
+
+### Variáveis de Ambiente e Senhas ###
+.env
+.env.*
+!.env.example
+*.local
+
+### Configurações Locais ###
+application-local.properties
+application-local.yml
+application-dev.properties
+application-dev.yml
+
+### Arquivos de Sistema Operacional ###
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+ehthumbs_vista.db
+Thumbs.db
+Desktop.ini
+
+### Arquivos de Backup e Temporários ###
+*.bak
+*.swp
+*~.nib
+
+### AI Context & Cache Files ###
+context.md
+agents.md
+implementation_plan.md
+task.md
+walkthrough.md
+scratch/
+.gemini/
+.cursor/
+.cursorrules
+.aider*
+.ai/

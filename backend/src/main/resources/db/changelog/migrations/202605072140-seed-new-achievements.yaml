@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - changeSet:
+      id: 202605072140-seed-new-achievements
+      author: antigravity
+      changes:
+        - insert:
+            tableName: achievements
+            columns:
+              - column:
+                  name: id
+                  value: "a1000000-0000-0000-0000-000000000004"
+              - column:
+                  name: name
+                  value: "Avatar Atualizado"
+              - column:
+                  name: criterion
+                  value: "Realizado ao alterar a foto de perfil pela primeira vez."

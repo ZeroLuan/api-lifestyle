@@ -1,0 +1,93 @@
+databaseChangeLog:
+  - changeSet:
+      id: 202605062200-seed-activity-types
+      author: sysmap
+      validCheckSum: ANY
+      changes:
+        - insert:
+            tableName: activity_types
+            columns:
+              - column:
+                  name: id
+                  value: "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+              - column:
+                  name: name
+                  value: 'Futebol'
+              - column:
+                  name: description
+                  value: 'Partida de futebol'
+              - column:
+                  name: image
+                  value: 'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=600&auto=format&fit=crop'
+              - column:
+                  name: created_at
+                  valueDate: CURRENT_TIMESTAMP
+              - column:
+                  name: updated_at
+                  valueDate: CURRENT_TIMESTAMP
+
+        - insert:
+            tableName: activity_types
+            columns:
+              - column:
+                  name: id
+                  value: "63a8faff-3f48-43e1-af9a-a43d3651787a"
+              - column:
+                  name: name
+                  value: 'Basquete'
+              - column:
+                  name: description
+                  value: 'Partida de basquete'
+              - column:
+                  name: image
+                  value: 'https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=600&auto=format&fit=crop'
+              - column:
+                  name: created_at
+                  valueDate: CURRENT_TIMESTAMP
+              - column:
+                  name: updated_at
+                  valueDate: CURRENT_TIMESTAMP
+
+        - insert:
+            tableName: activity_types
+            columns:
+              - column:
+                  name: id
+                  value: "3d497fbf-665d-45f3-b839-a181bb838957"
+              - column:
+                  name: name
+                  value: 'Caminhada'
+              - column:
+                  name: description
+                  value: 'Caminhada ao ar livre'
+              - column:
+                  name: image
+                  value: 'https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=600&auto=format&fit=crop'
+              - column:
+                  name: created_at
+                  valueDate: CURRENT_TIMESTAMP
+              - column:
+                  name: updated_at
+                  valueDate: CURRENT_TIMESTAMP
+
+        - insert:
+            tableName: activity_types
+            columns:
+              - column:
+                  name: id
+                  value: "5ccb5ad9-3e80-48db-b5a7-bac48a8553cd"
+              - column:
+                  name: name
+                  value: 'Vôlei'
+              - column:
+                  name: description
+                  value: 'Partida de vôlei'
+              - column:
+                  name: image
+                  value: 'https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?q=80&w=600&auto=format&fit=crop'
+              - column:
+                  name: created_at
+                  valueDate: CURRENT_TIMESTAMP
+              - column:
+                  name: updated_at
+                  valueDate: CURRENT_TIMESTAMP

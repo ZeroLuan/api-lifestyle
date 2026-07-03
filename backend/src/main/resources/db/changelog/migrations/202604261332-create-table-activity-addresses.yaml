@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: 202604261332-create-table-activity-addresses
+      author: luan
+      changes:
+        - createTable:
+            tableName: activity_addresses
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: address
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: latitude
+                  type: float8
+              - column:
+                  name: longitude
+                  type: float8

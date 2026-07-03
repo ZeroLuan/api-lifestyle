@@ -1,0 +1,26 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/migrations/202604251815-create-table-users.yaml
+  - include:
+      file: db/changelog/migrations/202604261330-create-table-activity-types.yaml
+  - include:
+      file: db/changelog/migrations/202604261331-create-table-achievements.yaml
+  - include:
+      file: db/changelog/migrations/202604261332-create-table-activity-addresses.yaml
+  - include:
+      file: db/changelog/migrations/202604261333-create-table-activities.yaml
+  - include:
+      file: db/changelog/migrations/202604261334-create-table-activity-participants.yaml
+  - include:
+      file: db/changelog/migrations/202604261335-create-table-user-achievements.yaml
+  - include:
+      file: db/changelog/migrations/202604261336-create-table-preferences.yaml
+  - include:
+      file: db/changelog/migrations/202605030000-add-audit-columns.yaml
+  - include:
+      file: db/changelog/migrations/202605030001-seed-achievements.yaml
+  - include:
+      file: db/changelog/migrations/202605062200-seed-activity-types.yaml
+  - include:
+      file: db/changelog/migrations/202605072140-seed-new-achievements.yaml
+

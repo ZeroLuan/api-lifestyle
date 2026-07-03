@@ -1,0 +1,87 @@
+databaseChangeLog:
+  - changeSet:
+      id: 202604261333-create-table-activities
+      author: luan
+      changes:
+        - createTable:
+            tableName: activities
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: title
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: description
+                  type: text
+                  constraints:
+                    nullable: false
+              - column:
+                  name: address_id
+                  type: uuid
+              - column:
+                  name: image
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: is_private
+                  type: boolean
+                  constraints:
+                    nullable: false
+              - column:
+                  name: confirmation_code
+                  type: varchar(6)
+              - column:
+                  name: scheduled_date
+                  type: datetime
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: datetime
+                  defaultValueComputed: CURRENT_TIMESTAMP
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: datetime
+                  defaultValueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: deleted_at
+                  type: datetime
+              - column:
+                  name: completed_at
+                  type: datetime
+              - column:
+                  name: user_id
+                  type: uuid
+                  constraints:
+                    nullable: false
+              - column:
+                  name: type_id
+                  type: uuid
+        - addForeignKeyConstraint:
+            baseTableName: activities
+            baseColumnNames: address_id
+            referencedTableName: activity_addresses
+            referencedColumnNames: id
+            constraintName: fk_activities_address
+        - addForeignKeyConstraint:
+            baseTableName: activities
+            baseColumnNames: user_id
+            referencedTableName: users
+            referencedColumnNames: id
+            constraintName: fk_activities_users
+        - addForeignKeyConstraint:
+            baseTableName: activities
+            baseColumnNames: type_id
+            referencedTableName: activity_types
+            referencedColumnNames: id
+            constraintName: fk_activities_type

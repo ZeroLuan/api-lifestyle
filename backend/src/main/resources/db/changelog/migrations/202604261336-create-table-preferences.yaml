@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: 202604261336-create-table-preferences
+      author: luan
+      changes:
+        - createTable:
+            tableName: preferences
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: user_id
+                  type: uuid
+                  constraints:
+                    nullable: false
+              - column:
+                  name: type_id
+                  type: uuid
+                  constraints:
+                    nullable: false
+        - addForeignKeyConstraint:
+            baseTableName: preferences
+            baseColumnNames: user_id
+            referencedTableName: users
+            referencedColumnNames: id
+            constraintName: fk_preferences_users
+        - addForeignKeyConstraint:
+            baseTableName: preferences
+            baseColumnNames: type_id
+            referencedTableName: activity_types
+            referencedColumnNames: id
+            constraintName: fk_preferences_types

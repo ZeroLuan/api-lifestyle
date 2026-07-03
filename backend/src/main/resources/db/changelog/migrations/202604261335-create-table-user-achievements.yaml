@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: 202604261335-create-table-user-achievements
+      author: luan
+      changes:
+        - createTable:
+            tableName: user_achievements
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: user_id
+                  type: uuid
+                  constraints:
+                    nullable: false
+              - column:
+                  name: achievement_id
+                  type: uuid
+                  constraints:
+                    nullable: false
+        - addForeignKeyConstraint:
+            baseTableName: user_achievements
+            baseColumnNames: user_id
+            referencedTableName: users
+            referencedColumnNames: id
+            constraintName: fk_user_achievements_users
+        - addForeignKeyConstraint:
+            baseTableName: user_achievements
+            baseColumnNames: achievement_id
+            referencedTableName: achievements
+            referencedColumnNames: id
+            constraintName: fk_user_achievements_achievements

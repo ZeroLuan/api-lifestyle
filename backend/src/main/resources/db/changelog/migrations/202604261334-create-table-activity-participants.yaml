@@ -1,0 +1,57 @@
+databaseChangeLog:
+  - changeSet:
+      id: 202604261334-create-table-activity-participants
+      author: luan
+      changes:
+        - createTable:
+            tableName: activity_participants
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: subscription_status
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: confirmed_at
+                  type: datetime
+              - column:
+                  name: approved
+                  type: boolean
+              - column:
+                  name: created_at
+                  type: datetime
+                  defaultValueComputed: CURRENT_TIMESTAMP
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: datetime
+                  defaultValueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: user_id
+                  type: uuid
+                  constraints:
+                    nullable: false
+              - column:
+                  name: activity_id
+                  type: uuid
+                  constraints:
+                    nullable: false
+        - addForeignKeyConstraint:
+            baseTableName: activity_participants
+            baseColumnNames: user_id
+            referencedTableName: users
+            referencedColumnNames: id
+            constraintName: fk_participants_users
+        - addForeignKeyConstraint:
+            baseTableName: activity_participants
+            baseColumnNames: activity_id
+            referencedTableName: activities
+            referencedColumnNames: id
+            constraintName: fk_participants_activities
